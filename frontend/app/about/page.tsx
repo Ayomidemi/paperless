@@ -3,7 +3,6 @@
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Brain, Shield, Target, Users, Award, Heart, ArrowRight, CheckCircle, Zap, Globe } from 'lucide-react';
 
 export default function AboutPage() {
@@ -12,13 +11,13 @@ export default function AboutPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+      <section className="px-6 py-20 bg-linear-to-br from-blue-50 to-blue-100">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
             About Paperless
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            We're on a mission to make receipt and invoice management effortless for businesses of all sizes.
+            We&apos;re on a mission to make receipt and invoice management effortless for businesses of all sizes.
           </p>
         </div>
       </section>
@@ -30,7 +29,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
               <p className="text-lg text-gray-600 mb-6">
-                We believe that managing receipts and invoices shouldn't be a headache. Our mission is to transform 
+                  We believe that managing receipts and invoices shouldn&apos;t be a headache. Our mission is to transform 
                 the way businesses handle financial documents through the power of AI and modern technology.
               </p>
               <p className="text-lg text-gray-600 mb-8">
@@ -52,7 +51,7 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8">
+            <div className="bg-linear-to-br from-blue-100 to-purple-100 rounded-2xl p-8">
               <div className="text-center">
                 <Brain className="h-16 w-16 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">99%+ Accuracy</h3>
@@ -121,21 +120,21 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-white">JD</span>
+              <div className="w-24 h-24 bg-linear-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-white">PA</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">John Doe</h3>
-              <p className="text-blue-600 font-medium mb-2">CEO & Founder</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Pease Adeniji</h3>
+              <p className="text-blue-600 font-medium mb-2">Founder</p>
               <p className="text-gray-600">
                 Former fintech executive with 10+ years of experience in AI and financial technology.
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-gradient-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-white">JS</span>
+              <div className="w-24 h-24 bg-linear-to-r from-green-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-white">AI</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Jane Smith</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Ayomide Ifeoluwa</h3>
               <p className="text-blue-600 font-medium mb-2">CTO</p>
               <p className="text-gray-600">
                 AI researcher and engineer with expertise in machine learning and computer vision.
@@ -143,10 +142,10 @@ export default function AboutPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-2xl font-bold text-white">MJ</span>
+              <div className="w-24 h-24 bg-linear-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-2xl font-bold text-white">AD</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Mike Johnson</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Abiola David</h3>
               <p className="text-blue-600 font-medium mb-2">Head of Product</p>
               <p className="text-gray-600">
                 Product strategist focused on creating intuitive user experiences and seamless workflows.
@@ -157,7 +156,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="px-6 py-20 bg-gradient-to-r from-blue-600 to-blue-700">
+      <section className="px-6 py-20 bg-linear-to-r from-blue-500 to-blue-600">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-6">Our Impact</h2>
@@ -195,11 +194,11 @@ export default function AboutPage() {
             We envision a world where financial document management is completely automated, 
             allowing businesses to focus on what they do best - creating value for their customers.
           </p>
-          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+          <div className="bg-linear-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
             <Globe className="h-16 w-16 text-blue-600 mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-4">The Future of Finance</h3>
             <p className="text-gray-600">
-              As we continue to innovate, we're building towards a future where AI handles all 
+              As we continue to innovate, we&apos;re building towards a future where AI handles all 
               the tedious aspects of financial management, making it accessible and efficient for everyone.
             </p>
           </div>
@@ -216,8 +215,8 @@ export default function AboutPage() {
             Start your journey with Paperless today and experience the future of receipt management.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300" asChild>
-              <a href="/register">
+            <Button size="lg" className="text-lg px-8 py-4 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+              <a href="/register" className="flex items-center justify-center">
                 Get Started Free
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>

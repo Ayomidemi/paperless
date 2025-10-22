@@ -1,7 +1,6 @@
 "use client";
 
 import { useAuth } from "@/contexts/AuthContext";
-import { LoginForm } from "@/components/LoginForm";
 import { Dashboard } from "@/components/Dashboard";
 import { Layout } from "@/components/Layout";
 import { Navigation } from "@/components/Navigation";
@@ -9,10 +8,10 @@ import { Footer } from "@/components/Footer";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { 
-  FileText, 
-  Upload, 
-  BarChart3, 
+import {
+  FileText,
+  Upload,
+  BarChart3,
   ArrowRight,
   Users,
   Brain,
@@ -23,17 +22,14 @@ import {
   PieChart,
   ShieldCheck,
   Database,
-  Origami,
   FileSearch,
-  Award,
-  MessageCircle,
-  Mail,
-  Heart,
   Smartphone,
+  Award,
 } from "lucide-react";
 
 export default function Home() {
   const { user, loading } = useAuth();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showUploadModal, setShowUploadModal] = useState(false);
 
   if (loading) {
@@ -50,7 +46,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <Dashboard 
+      <Dashboard
         onUploadReceipt={() => setShowUploadModal(true)}
         onUploadInvoice={() => setShowUploadModal(true)}
         onViewReceipt={(id) => console.log("View receipt:", id)}
@@ -66,21 +62,21 @@ function LandingPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+      <section className="px-6 py-20 bg-linear-to-br from-blue-50 to-blue-100">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in-up">
+            <div className="animate-fade-in-up">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium mb-6">
                 <Brain className="h-4 w-4 mr-2" />
                 AI-Powered Receipt Management
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Go Paperless.
-              <br />
+                <br />
                 <span className="text-blue-600">
                   Manage Receipts & Invoices with AI.
                 </span>
-            </h1>
+              </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Upload, scan, and organize your financial documents in seconds.
                 Paperless turns messy receipts into smart, searchable records.
@@ -88,35 +84,38 @@ function LandingPage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Button
                   size="lg"
-                  className="text-lg px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="text-lg px-8 py-4 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
                   asChild
                 >
-                <a href="/register">
+                  <a
+                    href="/register"
+                    className="flex items-center justify-center"
+                  >
                     Get Started Free
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
-              </Button>
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </a>
+                </Button>
                 <Button
                   size="lg"
                   variant="outline"
                   className="text-lg px-8 py-4 border-2 border-blue-200 text-blue-600 hover:bg-blue-50 transition-all duration-300"
                 >
                   <Play className="mr-2 h-5 w-5" />
-                Watch Demo
-              </Button>
-            </div>
+                  Watch Demo
+                </Button>
+              </div>
               <div className="flex items-center space-x-6 text-sm text-gray-500">
                 <div className="flex items-center">
                   <Check className="h-4 w-4 text-green-500 mr-2" />
                   <span>Trusted by freelancers & small businesses</span>
                 </div>
               </div>
-          </div>
-          
+            </div>
+
             {/* Hero Illustration */}
             <div className="animate-fade-in-up-delay">
               <div className="relative">
-              <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
+                <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200">
                   <div className="space-y-6">
                     {/* Upload Flow Mockup */}
                     <div className="flex items-center space-x-4 p-4 bg-blue-50 rounded-lg">
@@ -162,7 +161,7 @@ function LandingPage() {
                           <div className="h-3 bg-gray-400 rounded w-6"></div>
                         </div>
                       </div>
-                  </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -185,7 +184,7 @@ function LandingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-linear-to-br from-blue-50 to-blue-100">
               <CardHeader>
                 <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Upload className="h-6 w-6 text-white" />
@@ -202,7 +201,7 @@ function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-linear-to-br from-green-50 to-green-100">
               <CardHeader>
                 <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Bot className="h-6 w-6 text-white" />
@@ -219,7 +218,7 @@ function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
+              <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-linear-to-br from-purple-50 to-purple-100">
               <CardHeader>
                 <div className="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Search className="h-6 w-6 text-white" />
@@ -236,7 +235,7 @@ function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-linear-to-br from-orange-50 to-orange-100">
               <CardHeader>
                 <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <PieChart className="h-6 w-6 text-white" />
@@ -253,7 +252,7 @@ function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-pink-50 to-pink-100">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-linear-to-br from-pink-50 to-pink-100">
               <CardHeader>
                 <div className="w-12 h-12 bg-pink-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <ShieldCheck className="h-6 w-6 text-white" />
@@ -270,7 +269,7 @@ function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-cyan-50 to-cyan-100">
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-linear-to-br from-cyan-50 to-cyan-100">
               <CardHeader>
                 <div className="w-12 h-12 bg-cyan-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Database className="h-6 w-6 text-white" />
@@ -372,7 +371,7 @@ function LandingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-blue-50 to-blue-100">
+            <Card className="text-center hover:shadow-xl transition-all duration-300 border-0 bg-linear-to-br from-blue-50 to-blue-100">
               <CardHeader>
                 <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="h-8 w-8 text-white" />
@@ -389,7 +388,7 @@ function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-green-50 to-green-100">
+            <Card className="text-center hover:shadow-xl transition-all duration-300 border-0 bg-linear-to-br from-green-50 to-green-100">
               <CardHeader>
                 <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <FileText className="h-8 w-8 text-white" />
@@ -406,7 +405,7 @@ function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-purple-50 to-purple-100">
+            <Card className="text-center hover:shadow-xl transition-all duration-300 border-0 bg-linear-to-br from-purple-50 to-purple-100">
               <CardHeader>
                 <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <BarChart3 className="h-8 w-8 text-white" />
@@ -423,7 +422,7 @@ function LandingPage() {
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-orange-50 to-orange-100">
+            <Card className="text-center hover:shadow-xl transition-all duration-300 border-0 bg-linear-to-br from-orange-50 to-orange-100">
               <CardHeader>
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Smartphone className="h-8 w-8 text-white" />
@@ -444,7 +443,7 @@ function LandingPage() {
       </section>
 
       {/* AI & Security Highlight Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <section className="px-6 py-20 bg-linear-to-br from-blue-50 to-indigo-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -859,44 +858,70 @@ function LandingPage() {
 
           <div className="space-y-8">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">How accurate is the AI extraction?</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                How accurate is the AI extraction?
+              </h3>
               <p className="text-gray-600">
-                Our AI achieves 99%+ accuracy in extracting vendor names, amounts, dates, and line items from receipts and invoices. We use advanced machine learning models trained on millions of documents.
+                Our AI achieves 99%+ accuracy in extracting vendor names,
+                amounts, dates, and line items from receipts and invoices. We
+                use advanced machine learning models trained on millions of
+                documents.
               </p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Is my data secure?</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Is my data secure?
+              </h3>
               <p className="text-gray-600">
-                Absolutely. We use bank-level encryption (AES-256) for all data storage and transmission. Your documents are processed securely and never shared with third parties. We're GDPR compliant and SOC 2 certified.
+                Absolutely. We use bank-level encryption (AES-256) for all data
+                storage and transmission. Your documents are processed securely
+                and never shared with third parties. We&apos;re GDPR compliant and
+                SOC 2 certified.
               </p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">What file formats do you support?</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                What file formats do you support?
+              </h3>
               <p className="text-gray-600">
-                We support all major formats including PDF, JPG, PNG, and even mobile camera captures. Simply drag and drop or snap a photo - our AI handles the rest.
+                We support all major formats including PDF, JPG, PNG, and even
+                mobile camera captures. Simply drag and drop or snap a photo -
+                our AI handles the rest.
               </p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Can I integrate with my accounting software?</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Can I integrate with my accounting software?
+              </h3>
               <p className="text-gray-600">
-                Yes! We integrate with QuickBooks, Xero, and other popular accounting platforms. You can also export to CSV or PDF for easy import into any system.
+                Yes! We integrate with QuickBooks, Xero, and other popular
+                accounting platforms. You can also export to CSV or PDF for easy
+                import into any system.
               </p>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Is there a free trial?</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                Is there a free trial?
+              </h3>
               <p className="text-gray-600">
-                Yes! Start with our free plan that includes 10 receipts per month. No credit card required. Upgrade anytime to unlock unlimited uploads and advanced features.
+                Yes! Start with our free plan that includes 10 receipts per
+                month. No credit card required. Upgrade anytime to unlock
+                unlimited uploads and advanced features.
               </p>
             </div>
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" className="text-lg px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300" asChild>
-              <a href="/register">
+            <Button
+              size="lg"
+              className="text-lg px-8 py-4 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+              asChild
+            >
+              <a href="/register" className="flex items-center justify-center">
                 Get Started Free
                 <ArrowRight className="ml-2 h-5 w-5" />
               </a>

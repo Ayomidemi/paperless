@@ -71,7 +71,7 @@ export default function PricingPage() {
               <CardHeader className="text-center">
                 <CardTitle className="text-2xl text-gray-900">Pro</CardTitle>
                 <div className="text-4xl font-bold text-gray-900 mb-4">
-                  $29<span className="text-lg text-gray-500">/month</span>
+                  $9.99<span className="text-lg text-gray-500">/month</span>
                 </div>
                 <p className="text-gray-600">For growing businesses</p>
               </CardHeader>
@@ -153,7 +153,7 @@ export default function PricingPage() {
               Compare all features
             </h2>
             <p className="text-xl text-gray-600">
-              See what's included in each plan
+              See what&apos;s included in each plan
             </p>
           </div>
 
