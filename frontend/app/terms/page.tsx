@@ -2,7 +2,7 @@
 
 import { Navigation } from '@/components/Navigation';
 import { Footer } from '@/components/Footer';
-import { FileText, Scale, AlertTriangle, Shield, Users, CreditCard } from 'lucide-react';
+import { FileText, Scale, AlertTriangle, Shield, CreditCard } from 'lucide-react';
 
 export default function TermsOfServicePage() {
   return (
@@ -10,7 +10,7 @@ export default function TermsOfServicePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+      <section className="px-6 py-20 bg-linear-to-br from-blue-50 to-blue-100">
         <div className="max-w-4xl mx-auto text-center">
           <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <Scale className="h-8 w-8 text-white" />
@@ -19,7 +19,7 @@ export default function TermsOfServicePage() {
             Terms of Service
           </h1>
           <p className="text-xl text-gray-600 mb-4">
-            Last updated: January 15, 2024
+            Last updated: October 23, 2025
           </p>
           <p className="text-lg text-gray-600">
             Please read these terms carefully before using our service.
@@ -302,9 +302,7 @@ export default function TermsOfServicePage() {
                   If you have any questions about these Terms of Service, please contact us:
                 </p>
                 <div className="space-y-2">
-                  <p className="text-gray-600"><strong>Email:</strong> legal@paperless.com</p>
-                  <p className="text-gray-600"><strong>Address:</strong> 123 Business St, San Francisco, CA 94105</p>
-                  <p className="text-gray-600"><strong>Phone:</strong> +1 (555) 123-4567</p>
+                  <p className="text-gray-600"><strong>Email:</strong> privacy@paperless.com</p>
                 </div>
               </div>
             </div>

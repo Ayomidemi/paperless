@@ -10,7 +10,7 @@ export default function CookiePolicyPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+      <section className="px-6 py-20 bg-linear-to-br from-blue-50 to-blue-100">
         <div className="max-w-4xl mx-auto text-center">
           <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <Cookie className="h-8 w-8 text-white" />
@@ -19,7 +19,7 @@ export default function CookiePolicyPage() {
             Cookie Policy
           </h1>
           <p className="text-xl text-gray-600 mb-4">
-            Last updated: January 15, 2024
+            Last updated: October 23, 2025
           </p>
           <p className="text-lg text-gray-600">
             Learn how we use cookies and similar technologies to enhance your experience.
@@ -236,7 +236,7 @@ export default function CookiePolicyPage() {
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Managing Your Cookie Preferences</h2>
               
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-8">
+              <div className="bg-linear-to-r from-blue-50 to-purple-50 rounded-2xl p-8 mb-8">
                 <div className="flex items-center mb-6">
                   <Settings className="h-8 w-8 text-blue-600 mr-4" />
                   <h3 className="text-2xl font-bold text-gray-900">Cookie Settings</h3>
@@ -394,8 +394,6 @@ export default function CookiePolicyPage() {
                 </p>
                 <div className="space-y-2">
                   <p className="text-gray-600"><strong>Email:</strong> privacy@paperless.com</p>
-                  <p className="text-gray-600"><strong>Address:</strong> 123 Business St, San Francisco, CA 94105</p>
-                  <p className="text-gray-600"><strong>Phone:</strong> +1 (555) 123-4567</p>
                 </div>
               </div>
             </div>

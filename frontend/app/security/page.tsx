@@ -10,7 +10,7 @@ export default function SecurityPolicyPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="px-6 py-20 bg-gradient-to-br from-blue-50 to-blue-100">
+      <section className="px-6 py-20 bg-linear-to-br from-blue-50 to-blue-100">
         <div className="max-w-4xl mx-auto text-center">
           <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <Shield className="h-8 w-8 text-white" />
@@ -19,7 +19,7 @@ export default function SecurityPolicyPage() {
             Security Policy
           </h1>
           <p className="text-xl text-gray-600 mb-4">
-            Last updated: January 15, 2024
+            Last updated: October 23, 2025
           </p>
           <p className="text-lg text-gray-600">
             Your data security is our top priority. Learn about our comprehensive security measures.
@@ -35,7 +35,7 @@ export default function SecurityPolicyPage() {
             {/* Security Commitment */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Security Commitment</h2>
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+              <div className="bg-linear-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
                 <div className="flex items-center mb-6">
                   <Shield className="h-8 w-8 text-blue-600 mr-4" />
                   <h3 className="text-2xl font-bold text-gray-900">Bank-Level Security</h3>
@@ -264,7 +264,7 @@ export default function SecurityPolicyPage() {
             {/* Data Privacy */}
             <div className="mb-12">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Data Privacy & Compliance</h2>
-              <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8">
+              <div className="bg-linear-to-r from-green-50 to-blue-50 rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Compliance Standards</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   <div className="bg-white rounded-xl p-6">
@@ -373,7 +373,7 @@ export default function SecurityPolicyPage() {
                 <div className="bg-white rounded-xl p-6">
                   <h4 className="text-lg font-bold text-gray-900 mb-3">How to Report</h4>
                   <ul className="text-gray-600 space-y-2">
-                    <li>• Email: security@paperless.com</li>
+                    <li>• Email: privacy@paperless.com</li>
                     <li>• Include detailed steps to reproduce the issue</li>
                     <li>• Provide your contact information</li>
                     <li>• Allow reasonable time for us to address the issue</li>
@@ -390,10 +390,7 @@ export default function SecurityPolicyPage() {
                   For security-related questions, concerns, or to report vulnerabilities, please contact us:
                 </p>
                 <div className="space-y-2">
-                  <p className="text-gray-600"><strong>Security Email:</strong> security@paperless.com</p>
                   <p className="text-gray-600"><strong>General Contact:</strong> privacy@paperless.com</p>
-                  <p className="text-gray-600"><strong>Address:</strong> 123 Business St, San Francisco, CA 94105</p>
-                  <p className="text-gray-600"><strong>Phone:</strong> +1 (555) 123-4567</p>
                 </div>
               </div>
             </div>
