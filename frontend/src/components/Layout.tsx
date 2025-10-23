@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
+import { usePathname } from 'next/navigation';
 import { 
   Receipt, 
   FileText, 
@@ -12,10 +13,15 @@ import {
   Menu,
   X,
   User,
-  Bell
+  Bell,
+  BarChart3,
+  Search,
+  Plus,
+  Origami
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -24,13 +30,20 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const { user, logout } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const pathname = usePathname();
 
   const navigation = [
-    { name: 'Dashboard', href: '/', icon: Home },
-    { name: 'Receipts', href: '/receipts', icon: Receipt },
-    { name: 'Invoices', href: '/invoices', icon: FileText },
-    { name: 'Upload', href: '/upload', icon: Upload },
-    { name: 'Settings', href: '/settings', icon: Settings },
+    { name: 'Dashboard', href: '/', icon: Home, badge: null },
+    { name: 'Receipts', href: '/receipts', icon: Receipt, badge: null },
+    { name: 'Invoices', href: '/invoices', icon: FileText, badge: null },
+    { name: 'Analytics', href: '/analytics', icon: BarChart3, badge: null },
+    { name: 'Upload', href: '/upload', icon: Upload, badge: null },
+    { name: 'Settings', href: '/settings', icon: Settings, badge: null },
+  ];
+
+  const quickActions = [
+    { name: 'Upload Receipt', icon: Plus, action: () => console.log('Upload receipt') },
+    { name: 'Quick Scan', icon: Search, action: () => console.log('Quick scan') },
   ];
 
   return (
@@ -51,13 +64,13 @@ export function Layout({ children }: LayoutProps) {
               <X className="h-6 w-6 text-white" />
             </button>
           </div>
-          <SidebarContent navigation={navigation} />
+          <SidebarContent navigation={navigation} quickActions={quickActions} pathname={pathname} />
         </div>
       </div>
 
       {/* Desktop sidebar */}
       <div className="hidden lg:flex lg:w-64 lg:flex-col lg:fixed lg:inset-y-0">
-        <SidebarContent navigation={navigation} />
+        <SidebarContent navigation={navigation} quickActions={quickActions} pathname={pathname} />
       </div>
 
       {/* Main content */}
@@ -87,7 +100,7 @@ export function Layout({ children }: LayoutProps) {
                 </div>
               </div>
             </div>
-            <div className="ml-4 flex items-center md:ml-6">
+            <div className="mx-4 flex items-center md:mx-6">
               <button
                 type="button"
                 className="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
@@ -98,20 +111,12 @@ export function Layout({ children }: LayoutProps) {
               {/* Profile dropdown */}
               <div className="ml-3 relative">
                 <div className="flex items-center space-x-3">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center">
                       <User className="h-5 w-5 text-white" />
                     </div>
                   </div>
-                  <div className="hidden md:block">
-                    <div className="text-sm font-medium text-gray-700">
-                      {user?.firstName} {user?.lastName}
-                    </div>
-                    <div className="text-sm text-gray-500">{user?.email}</div>
-                  </div>
-                  <Button variant="ghost" size="sm" onClick={logout}>
-                    <LogOut className="h-4 w-4" />
-                  </Button>
+                
                 </div>
               </div>
             </div>
@@ -131,35 +136,100 @@ export function Layout({ children }: LayoutProps) {
   );
 }
 
-function SidebarContent({ navigation }: { navigation: any[] }) {
+function SidebarContent({ navigation, quickActions, pathname }: { 
+  navigation: {
+    name: string;
+    href: string;
+    icon: React.ComponentType<any>;
+    badge: string | null;
+  }[]; 
+  quickActions: {
+    name: string;
+    icon: React.ComponentType<any>;
+    action: () => void;
+  }[];
+  pathname: string;
+}) {
   return (
-    <div className="flex-1 flex flex-col min-h-0 border-r border-gray-200 bg-white">
-      <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-        <div className="flex items-center flex-shrink-0 px-4">
+    <div className="flex-1 flex flex-col min-h-0 bg-white shadow-xl">
+      <div className="flex-1 flex flex-col pt-6 pb-4 overflow-y-auto">
+        {/* Logo */}
+        <div className="flex items-center shrink-0 px-6">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <Receipt className="h-8 w-8 text-blue-600" />
+            <div className="shrink-0">
+              <div className="h-10 w-10 bg-linear-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                <Origami className="h-6 w-6 text-white" />
+              </div>
             </div>
             <div className="ml-3">
-              <h1 className="text-xl font-semibold text-gray-900">Paperless</h1>
+              <h1 className="text-xl font-bold text-gray-900">Paperless</h1>
+              <p className="text-xs text-gray-500">Receipt Manager</p>
             </div>
           </div>
         </div>
-        <nav className="mt-5 flex-1 px-2 space-y-1">
+
+      
+
+        {/* Navigation */}
+        <nav className="mt-6 flex-1 px-4 space-y-1">
+        
           {navigation.map((item) => {
             const Icon = item.icon;
+            const isActive = pathname === item.href;
             return (
-              <a
+              <Link
                 key={item.name}
                 href={item.href}
-                className="group flex items-center px-2 py-2 text-sm font-medium rounded-md text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                className={cn(
+                  "group flex items-center justify-between px-3 py-2.5 text-sm font-medium rounded-lg transition-all duration-200",
+                  isActive
+                    ? "bg-blue-50 text-blue-700 shadow-sm border border-blue-200"
+                    : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                )}
               >
-                <Icon className="mr-3 flex-shrink-0 h-6 w-6" />
-                {item.name}
-              </a>
+                <div className="flex items-center">
+                  <Icon className={cn(
+                    "mr-3 flex-shrink-0 h-5 w-5",
+                    isActive ? "text-blue-600" : "text-gray-400 group-hover:text-gray-600"
+                  )} />
+                  {item.name}
+                </div>
+                {item.badge && (
+                  <span className="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-blue-600 rounded-full">
+                    {item.badge}
+                  </span>
+                )}
+              </Link>
             );
           })}
         </nav>
+
+        {/* User Profile Section */}
+        <div className="px-4 mt-6">
+          <div className="bg-gray-50 rounded-lg p-4">
+            <div className="flex items-center">
+              <div className="shrink-0">
+                <div className="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center">
+                  <User className="h-5 w-5 text-white" />
+                </div>
+              </div>
+              <div className="ml-3 flex-1">
+                <p className="text-sm font-medium text-gray-900">John Doe</p>
+                <p className="text-xs text-gray-500">john@example.com</p>
+              </div>
+            </div>
+            <div className="mt-3 flex space-x-2">
+              <Button variant="ghost" size="sm" className="flex-1 text-xs text-blue-600 hover:text-blue-700">
+                <Settings className="h-3 w-3 mr-1" />
+                Settings
+              </Button>
+              <Button variant="ghost" size="sm" className="flex-1 text-xs text-red-600 hover:text-red-700">
+                <LogOut className="h-3 w-3 mr-1" />
+                Logout
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
